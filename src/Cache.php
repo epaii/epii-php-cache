@@ -15,6 +15,9 @@ class Cache
 
     private static function getfile($keyword)
     {
+        if (!self::$_dir) {
+            self::$_dir = __DIR__ . "/../cache";
+        }
         $dir = self::$_dir . "/" . substr($keyword, 0, 1) . "/" . substr($keyword, 1, 1) . "/" . substr($keyword, 2, 1);
         if (!is_dir($dir)) {
             mkdir($dir, 777, TRUE);
