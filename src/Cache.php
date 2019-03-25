@@ -20,7 +20,7 @@ class Cache
         }
         $dir = self::$_dir . "/" . substr($keyword, 0, 1) . "/" . substr($keyword, 1, 1) . "/" . substr($keyword, 2, 1);
         if (!is_dir($dir)) {
-            mkdir($dir, 777, TRUE);
+            mkdir($dir, 0777, TRUE);
         }
         return $dir . "/" . $keyword . ".cache";
     }
